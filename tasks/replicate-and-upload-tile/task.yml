@@ -1,0 +1,25 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: rjain/buildbox}
+
+params:
+  DEBUG:
+  OPSMAN_ENV_FILE_NAME:
+  REPLICATOR_NAME:
+
+inputs:
+- name: pipelines-repo
+- name: om-cli
+- name: pivnet-product
+- name: replicator
+- name: env
+
+outputs:
+  - name: replicator-tile
+
+run:
+  path: pipelines-repo/tasks/replicate-and-upload-tile/task.sh

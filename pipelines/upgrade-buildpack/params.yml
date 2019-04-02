@@ -1,0 +1,25 @@
+# Token used to download the product file from Pivotal Network. Find this
+# on your Pivotal Network profile page:
+# https://network.pivotal.io/users/dashboard/edit-profile
+pivnet_token: <YOUR-PIVNET-TOKEN> # [R] Your pivnet token
+
+# The token used to download the repos from GitHub for the pipelines
+git_token: <YOUR-GITHUB-TOKEN> # [R] your github token
+git_url: https://github.com/rahul-kj/pcf-concourse-pipelines # [R] Pipelines github repo
+git_branch: master
+git_username: # [R] Your github username
+
+debug: false # Set to true if you want to see all the tasks output. This will also show all the secrets and certs, so think twice
+
+product_slug: buildpacks
+product_version: "Ruby*"
+product_glob: "*cached*" ## cached or offline
+
+cf_api_endpoint: # [R] PCF environment CC API Endpoint, ex: api.run.pivotal.io
+cf_user: # [R] PCF Service account
+cf_password: # [R] PCF Service account password
+buildpack_name: # [R] buildpack name
+buildpack_position: # [R] buildpack position
+org: system
+space: system
+is_enabled: disable # [R] enable|disable
